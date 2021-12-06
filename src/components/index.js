@@ -1,2 +1,2 @@
-// import all components in one line 
-import { default as Navbar } from './Navbar';
+// export all components in one line 
+export { default as Navbar } from './Navbar';
