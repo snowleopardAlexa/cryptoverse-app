@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="cryptoverse-app">
         <div className="navbar">
-           <h1>hello</h1>
+           <Navbar />
         </div>
         <div className="main">
 
@@ -18,6 +18,7 @@ function App() {
         <div className="footer">
 
         </div>
+        <div> Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp"> Eucalyp </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
     </div>
   );
 }
