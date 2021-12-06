@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
 // import all components in one line 
@@ -15,30 +15,29 @@ function App() {
         <div className="main">
             <Layout>
               <div className="routes">
-                <Switch>
-                  <Route exact path="/">
-                      <HomePage />
+                <Routes>
+                  <Route path="/" element={<HomePage />}>
+          
                   </Route>
-                  <Route exact path="/exchanges">
-                      <Exchanges />
+                  <Route path="/exchanges" element={<Exchanges />}>
+                      
                   </Route>
-                  <Route exact path="/cryptocurrencies">
-                      <Cryptocurrencies />
+                  <Route path="/cryptocurrencies" element={<Cryptocurrencies />}>
+                    
                   </Route>
-                  <Route exact path="/crypto/:coinId">
-                      <CryptoDetails />
+                  <Route path="/crypto/:coinId" element={<CryptoDetails />}>
+                    
                   </Route>
-                  <Route exact path="/news">
-                      <News />
+                  <Route path="/news" element={<News />}>
+                    
                   </Route>
-                </Switch>
+                </Routes>
               </div>
             </Layout>
         </div>
         <div className="footer">
 
         </div>
-        <div> Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp"> Eucalyp </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
     </div>
   );
 }
