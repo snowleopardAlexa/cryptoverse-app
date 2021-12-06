@@ -3,11 +3,15 @@ import millify from 'millify';
 import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
 
+import { useGetCryptosQuery } from '../services/cryptoApi';
 
 // destructure Title from Typography antd
 const { Title } = Typography;
 
 function HomePage() {
+
+    const { data, isFetching } = useGetCryptosQuery();
+
     return (
         <>
           <Title>

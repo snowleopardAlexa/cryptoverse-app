@@ -26,4 +26,5 @@ export const cryptoApi = createApi({
   }),
 });
 
+// redux toolkit hooks
 export const { useGetCryptosQuery, useGetCryptoDetailsQuery, useGetExchangesQuery, useGetCryptoHistoryQuery } = cryptoApi;
