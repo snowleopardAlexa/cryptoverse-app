@@ -1,5 +1,5 @@
 :root{
-  --text-primary:#000;
+  --text-primary:rgb(15, 15, 15);
   --bgPrimary:#fff;
  --bgSecondary: #F9F9F9;
  --pink: #0071bd;
@@ -54,7 +54,7 @@ a:hover{
 .logo{
   margin:0 0 0 15px;
 }
-.logo a{
+.logo a {
  color: white;
 }
 .menu-control-container{
