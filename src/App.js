@@ -4,6 +4,7 @@ import { Layout, Typography, Space } from 'antd';
 
 // import all components in one line 
 import { Navbar } from './components';
+import './App.css';
 
 function App() {
   return (
