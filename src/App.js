@@ -1,14 +1,15 @@
 import React from 'react';
+import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
 // import all components in one line 
 import { Navbar, Exchanges, HomePage, Cryptocurrencies, CryptoDetails, News } from './components';
-import './App.css';
+
 
 function App() {
   return (
-    <div className="cryptoverse-app">
+    <div className="app">
         <div className="navbar">
            <Navbar />
         </div>
