@@ -3,7 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
 // import all components in one line 
-import { Navbar } from './components';
+import { Navbar, Exchanges, HomePage, Cryptocurrencies, CryptoDetails, News } from './components';
 import './App.css';
 
 function App() {
