@@ -9,7 +9,7 @@ function Navbar() {
     return (
         <div className="nav-container">
             <div className="logo-container">
-              <Avatar src={icon} />
+              <Avatar src={icon} size="large" />
               <Typography.Title 
                 level={2}
                 className="logo"
@@ -27,7 +27,7 @@ function Navbar() {
               <Menu.Item icon={<FundOutlined />}>
                 <Link to="/cryptocurrencies">Cryptocurrencies</Link>
               </Menu.Item>
-              <Menu.Item icon={<HomeOutlined />}>
+              <Menu.Item icon={<MoneyCollectOutlined />}>
                 <Link to="/exchanges">Exchanges</Link>
               </Menu.Item>
               <Menu.Item icon={<BulbOutlined />}>
