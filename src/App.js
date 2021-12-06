@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="cryptoverse-app">
         <div className="navbar">
-
+           <h1>hello</h1>
         </div>
         <div className="main">
 
