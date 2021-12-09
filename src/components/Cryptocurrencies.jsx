@@ -16,7 +16,7 @@ function Cryptocurrencies({ simplified }) {
         setCryptos(cryptosList?.data?.coins);
 
         const filteredData = cryptosList?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchTerm.toLowerCase()));
-    })
+    }, [cryptosList, searchTerm])
 
     if(isFetching) return 'Loading...';
 
