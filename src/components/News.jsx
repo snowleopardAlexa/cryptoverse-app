@@ -19,6 +19,19 @@ function News({ simplified }) {
 
     return (
         <Row gutter={ [ 24, 24 ]}>
+            {!simplified && (
+                <Col span={24}>
+                    <Select
+                     showSearch
+                     className="select-news"
+                     placeholder="select a crypto"
+                     optionFilterProp="children"
+                     onChange={(value) => console.log(value)}
+                     filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) > 0}
+                    >
+                    </Select>
+                </Col>
+            )}
             {cryptoNews.value.map((news, i) => (
                 <Col xs={24} sm={12} lg={8} key={i}>
                     <Card hoverable className="news-card">
