@@ -5,6 +5,8 @@ import millify from 'millify';
 import { Col, Row, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
+import { useGetCryptoDetailsQuery } from '../services/cryptoApi';
+
 // destructure
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -13,6 +15,7 @@ function CryptoDetails() {
 
     const { coinId } = useParams();
     const [timePeriod, setTimePeriod] = useState('7d')
+    const [ data, isFetching ] = useGetCryptoDetailsQuery(coinId)
 
     return (
         <div>
