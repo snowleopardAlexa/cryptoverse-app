@@ -5,6 +5,9 @@ import moment from 'moment';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
 import { useGetCryptosQuery } from '../services/cryptoApi';
 
+// display when news have no default img
+const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
+
 const { Text, Title } = Typography;
 const { Option } = Select;
 
@@ -22,6 +25,7 @@ function News({ simplified }) {
                         <a href={news.url} target="_blank" rel="noreferrer">
                             <div className="news-image-container">
                                 <Title className="news-title" level={4}>{news.name}</Title>
+                                <img src={news?.image?.thumbnail?.contentUrl || demoImage } alt="news" />
                             </div>
                         </a>
                     </Card>
