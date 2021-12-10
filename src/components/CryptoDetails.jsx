@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
 import millify from 'millify';
@@ -12,6 +12,7 @@ const { Option } = Select;
 function CryptoDetails() {
 
     const { coinId } = useParams();
+    const [timePeriod, setTimePeriod] = useState('7d')
 
     return (
         <div>
