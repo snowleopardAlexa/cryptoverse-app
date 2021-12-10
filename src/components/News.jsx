@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
 import moment from 'moment';
 
@@ -13,7 +13,8 @@ const { Option } = Select;
 
 
 function News({ simplified }) {
-    const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory: 'Cryptocurrency', count: simplified ? 6 : 8})
+    const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
+    const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 8})
 
     if(!cryptoNews?.value) return 'Loading ...';
 
@@ -27,8 +28,9 @@ function News({ simplified }) {
                      placeholder="select a crypto"
                      optionFilterProp="children"
                      onChange={(value) => console.log(value)}
-                     filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) > 0}
+                     filterOption={(input, option) => option.toLowerCase().indexOf(input.toLowerCase()) > 0}
                     >
+                    <Option value="Cryptocurrency">Cryptocurrency</Option>    
                     </Select>
                 </Col>
             )}
