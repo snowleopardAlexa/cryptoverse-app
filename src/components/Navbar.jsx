@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Menu, Typography, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
-import { HomeOutlined, FundOutlined, MoneyCollectOutlined, BulbOutlined } from '@ant-design/icons';
+import { HomeOutlined, FundOutlined, MoneyCollectOutlined, BulbOutlined, MenuOutlined } from '@ant-design/icons';
 
 import icon from '../img/cryptocurrency.png';
 
@@ -38,7 +38,11 @@ function Navbar() {
               >
                 <Link to="/">Cryptoverse</Link>
               </Typography.Title>
-              <Button className="menu-control-container"></Button>
+              <Button 
+                className="menu-control-container">
+                onClick={() => setActiveMenu(true)}
+                <MenuOutlined />
+              </Button>
             </div>
             {activeMenu && (
             <Menu theme="dark">
