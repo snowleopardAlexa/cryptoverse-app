@@ -38,10 +38,9 @@ function Navbar() {
               >
                 <Link to="/">Cryptoverse</Link>
               </Typography.Title>
-              <Button className="menu-control-container">
-
-              </Button>
+              <Button className="menu-control-container"></Button>
             </div>
+            {activeMenu && (
             <Menu theme="dark">
               <Menu.Item icon={<HomeOutlined />}>
                 <Link to="/">Home</Link>
@@ -56,6 +55,7 @@ function Navbar() {
                 <Link to="/news">News</Link>
               </Menu.Item>
             </Menu>
+            )}
         </div>
     )
 }
