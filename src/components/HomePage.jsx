@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { Cryptocurrencies, News } from '.';
-import Loader from 'Loader';
+import Loader from './Loader';
 
 // destructure Title from Typography antd
 const { Title } = Typography;
