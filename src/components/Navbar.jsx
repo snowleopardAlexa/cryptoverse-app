@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Menu, Typography, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
-import { HomeOutlined, FundOutlined, MoneyCollectOutlined, BulbOutlined } from '@ant-design/icons';
+import { HomeOutlined, FundOutlined, MoneyCollectOutlined, BulbOutlined, MenuOutlined } from '@ant-design/icons';
 
 import icon from '../img/cryptocurrency.png';
 
 function Navbar() {
+
+    const [activeMenu, setActiveMenu] = useStatee(true);
+    const [screenSize, setScreenSize] = useState(null);
+
+    useEffect(() => {
+      const handleResize = () => setScreenSize(window.innerWidth);
+
+      window.addEventListener('resize', handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+      if (screenSize < 768) {
+        setActiveMenu(false);
+      } else {
+        setActiveMenu(true);
+      }
+    }, [screenSize])
+
     return (
         <div className="nav-container">
             <div className="logo-container">
@@ -16,10 +38,13 @@ function Navbar() {
               >
                 <Link to="/">Cryptoverse</Link>
               </Typography.Title>
-              <Button className="menu-control-container">
-
+              <Button 
+                className="menu-control-container">
+                onClick={() => setActiveMenu(!activeMenu)}
+                <MenuOutlined />
               </Button>
             </div>
+            {activeMenu && (
             <Menu theme="dark">
               <Menu.Item icon={<HomeOutlined />}>
                 <Link to="/">Home</Link>
@@ -34,6 +59,7 @@ function Navbar() {
                 <Link to="/news">News</Link>
               </Menu.Item>
             </Menu>
+            )}
         </div>
     )
 }
