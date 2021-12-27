@@ -7,7 +7,7 @@ import icon from '../img/cryptocurrency.png';
 
 function Navbar() {
 
-    const [activeMenu, setActiveMenu] = useStatee(true);
+    const [activeMenu, setActiveMenu] = useState(true);
     const [screenSize, setScreenSize] = useState(null);
 
     useEffect(() => {
@@ -39,8 +39,8 @@ function Navbar() {
                 <Link to="/">Cryptoverse</Link>
               </Typography.Title>
               <Button 
-                className="menu-control-container">
-                onClick={() => setActiveMenu(!activeMenu)}
+                className="menu-control-container"
+                onClick={() => setActiveMenu(!activeMenu)}>
                 <MenuOutlined />
               </Button>
             </div>
