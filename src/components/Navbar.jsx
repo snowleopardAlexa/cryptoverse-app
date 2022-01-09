@@ -31,9 +31,9 @@ function Navbar() {
     return (
         <div className="nav-container">
             <div className="logo-container">
-              <Avatar src={icon} size="large" />
+              <Avatar src={icon} size="medium" />
               <Typography.Title 
-                level={2}
+                level={3}
                 className="logo"
               >
                 <Link to="/">Cryptoverse</Link>
@@ -41,7 +41,7 @@ function Navbar() {
               <Button 
                 className="menu-control-container"
                 onClick={() => setActiveMenu(!activeMenu)}>
-                <MenuOutlined />
+                <MenuOutlined style={{fontSize: '25px', color: 'blue'}} />
               </Button>
             </div>
             {activeMenu && (
