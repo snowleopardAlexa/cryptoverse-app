@@ -15,6 +15,10 @@ function HomePage() {
     const { data, isFetching } = useGetCryptosQuery(10);
     const globalStats = data?.data?.stats;
 
+    console.log(`globalStats: ${globalStats}`);
+    console.log(`Is globalStats undefined? ${globalStats === undefined}`);
+    console.log(`Is isFetching falsy? ${!isFetching}`);
+    console.log(`Is isFetching falsy while globalStats is undefined? ${globalStats === undefined && !isFetching}`);
     if(isFetching) return <Loader />;
 
     return (
